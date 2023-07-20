@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section id="main_content">
+        <section id="content">
+            <header>
+                <!-- блок для логотипа -->
+                <div class="logo">
+                    <div class="logo_line"></div>
+                    <h2 class="logo_text">alex. shevchov</h2>
+                    <div class="logo_line"></div>
+                </div>
+                <!-- блок для различных ссылок меню -->
+                <div class="menu_links">
+                    <a id="menu_link" href="">Обо мне</a>
+                    <a id="menu_link" href="">Наставничество</a>
+                    <a id="menu_link" href="">Мероприятия</a>
+                    <a id="menu_link" href="">Кейсы</a>
+                    <a id="menu_link" href="">Отзывы</a>
+                    <a id="menu_link" href="">Контакты</a>
+                </div>
+                <!-- блок для номера телефона -->
+                <div class="phone_number_block">
+                    <img class="phone_number_img" src="./media/phone.svg">
+                    <p class="phone_number">8-345-123-34-45</p>
+                </div>
+            </header>
+            <dev id="sec_1">
+                <h1>Создаю условия<br> для вашего успеха
+                </h1>
+                <p>Когда ваше время и энергия лучше сфокусированы, стремление к новым возможностям становится
+                    реальностью,
+                    ваш успех зависит от ваших действий</p>
+            </dev>
+            <dev id="sec_2">
+                <img class="mentor" src="./media/mentor.png" alt="">
+            </dev>
+            <dev id="sec_3">
+                <div class="button_block">
+                    <div class="clickable_btn_block" onclick="on_button_click(this)" onmouseover="on_hover(this)">
+                        <div class="my_button">
+                            <p>Записаться на консультацию</p>
+                        </div>
+                        <div class="arrow"><img src="./media/bl.svg" alt=""></div>
+                    </div>
+                    <div class="statistic_block">
+                        <h2 class="statistic_numbers">130+</h2>
+                        <p class="statistick_text">техник для достижения целей</p>
+                    </div>
+                </div>
+            </dev>
+            <dev id="sec_4">
+                <div class="button_block">
+                    <div class="clickable_btn_block" onclick="on_button_click(this)" onmouseover="on_hover(this)">
+                        <!-- <button class="btn">Записаться на консультацию</button> -->
+                        <div class="my_button">
+                            <p>Бесплатная консультация</p>
+                        </div>
+                        <div class="arrow"><img src="./media/bl.svg" alt=""></div>
+                    </div>
+                    <div class="statistic_block">
+                        <h2 class="statistic_numbers">250%</h2>
+                        <p class="statistick_text">увеличение личной продуктивности</p>
+                    </div>
+                </div>
+            </dev>
+        </section>
+    </section>
+    <section id="callback">
+        <div class="cancel_btn_block" onclick="close_callback(this)"><img src="./media/cancel.svg" alt=""></div>
+        <div class="callback_block">
+            <h1>Закажите обратный звонок</h1>
+            <form>
+                <input class="inp input_name" placeholder="Александр" value="" type="text">
+                <br>
+                <input class="inp input_phone" pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im" placeholder="89521235486" value="" type="text">
+                <label class="agreement">
+                    <input class="checkbox_" type="checkbox">
+                    <span class="checkmark"></span>
+                    <p>Согласен на сохранение и обработку персональных данных</p>
+                </label>
+                <div class="clickable_btn_block"  onclick="send_form(this)" onmouseover="on_hover(this)">
+                    <!-- <button class="btn">Записаться на консультацию</button> -->
+                    <div class="my_button">
+                        <p>Бесплатная консультация</p>
+                    </div>
+                    <div class="arrow"><img src="./media/bl.svg" alt=""></div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="callback_done">
+        <div class="cancel_btn_block" onclick="close_callback(this)"><img src="./media/cancel.svg" alt=""></div>
+        <h1 class="one_h">Спасибо
+            за заявку</h1>
+        <h1 class="two_h">Я обязательно
+            свяжусь с вами
+            в ближайшее время.</h1>
+        <div class="logo">
+            <div class="logo_line"></div>
+            <h2 class="logo_text">alex. shevchov</h2>
+            <div class="logo_line"></div>
+        </div>
+    </section>
+    <script>
+
+        function on_button_click(e) {
+            let target = document.getElementById("callback")
+            let main_content = document.getElementById("main_content")
+            target.style.setProperty("left", 0);
+            main_content.style.filter = "blur(4px)"
+        }
+
+        function on_hover(e) {
+            let target = e.children[1].children[0]
+            target.setAttribute('src', "./media/Vector.svg")
+        }
+
+        function close_callback(e) {
+            let target = document.getElementById("callback")
+            let target2 = document.getElementById("callback_done")
+            target.style.setProperty("left", "-100%");
+            target2.style.setProperty("left", "-100%");
+
+            let main_content = document.getElementById("main_content")
+            main_content.style.filter = "blur()"
+        }
+
+        function done_callback(){
+            let target = document.getElementById("callback_done")
+            target.style.setProperty("left", 0);
+        }
+
+        function send_form(e){
+            let userName = document.querySelector(".input_name");
+            let userPhone = document.querySelector(".input_phone");
+            let agreeCheckbox = document.querySelector(".checkbox_");
+            let mark = document.querySelector(".checkmark")
+
+            let reg = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+            
+            if ( userName.value.length <= 0 ){
+                userName.style.color = 'red'
+                alert("Вы не ввели имя")
+                return
+            }
+            else if ( userPhone.value.length <= 0 ){
+                userPhone.style.color = 'red'
+                alert("Вы не ввели телефон")
+                return
+            }
+            
+            else if ( reg.exec(userPhone.value) == null ){
+                userPhone.style.color = 'red'
+                alert("не правельный номер телефона")
+                return
+            }
+
+            else if ( !agreeCheckbox.checked ){
+                mark.style.border = "1px solid red"
+                return
+            }
+
+            // close_scallback('')
+            done_callback()
+        }
+    </script>
+    <!-- <script src="./scripts.js"></script> -->
+</body>
+
+</html>

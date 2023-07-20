@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@400;600&display=swap');
+
+:root {
+    --main-color: #133457;
+    --second-color: #07305D;
+    --dark-white: rgba(255, 255, 255, 0.5);
+    --my-backgroud: #0F1D45;
+    --my-hover-backgroud: #132557;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    color: white
+}
+
+body {
+    padding: 0px 15.6%;
+    background-image: url("./media/background.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+
+#main_content {
+    transition: .5s ease-in-out;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 420px auto auto;
+    grid-template-rows: 100px 1fr 1fr;
+    /* grid-template-rows: repeat(3, 1fr); */
+}
+
+header {
+    width: 100%;
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-top: 40px; */
+}
+
+.logo_line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.logo_text {
+    text-transform: uppercase;
+    margin: 5px 0px;
+}
+
+.phone_number_block {
+
+    display: flex;
+    gap: 10px;
+}
+
+.phone_number {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 122.8%;
+    /* 22.104px */
+    letter-spacing: 0.36px;
+}
+
+.menu_links {
+    display: flex;
+    gap: 30px;
+}
+
+#menu_link {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122.8%;
+    text-decoration: none;
+}
+
+#sec_1 {
+    grid-column: 1/ span 2;
+    grid-row: 2/3;
+}
+
+#sec_1>h1 {
+    font-family: Raleway;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 135.3%;
+    /* 87.945px */
+    text-transform: uppercase;
+}
+
+#sec_1>p {
+    color: var(--dark-white);
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    padding-left: 24px;
+    border-left: 1px solid white;
+}
+
+/* секция с фотографией мужчины */
+#sec_2 {
+    grid-row: 2/ span 3;
+    margin-left: 10%;
+}
+
+/* секция с записью */
+#sec_3 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+}
+
+/* секция с бесплатной консультацией */
+#sec_4 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+}
+
+/* custom кнопки */
+.clickable_btn_block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20%;
+}
+
+.clickable_btn_block:hover .my_button {
+    background: none;
+    border: 2px solid white;
+    border-right: none;
+    color: white;
+}
+
+.clickable_btn_block:hover .arrow {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 60%;
+
+}
+
+.clickable_btn_block:hover .arrow img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin: 30px 30px;
+    src: url("./media/Vector.svg");
+}
+
+
+.clickable_btn_block:hover .my_button p {
+    color: white;
+}
+
+.my_button {
+    width: 270px;
+    height: 61px;
+    /* border-right: none; */
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+    color: var(--main-color);
+}
+
+.my_button>p {
+    color: black;
+}
+
+.arrow {
+    width: 61px;
+    height: 61px;
+    border: 1px solid white;
+    border-left: 2px solid black;
+    background: white;
+}
+
+.arrow img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin: 30px 30px;
+}
+
+/* стаитстика под кнопками */
+
+.statistic_block {
+    padding-left: 30px;
+    border-left: 1px solid white;
+}
+
+.statistic_numbers {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 141.3%;
+    /* 56.52px */
+    text-transform: uppercase;
+}
+
+.statistick_text {
+    width: 40%;
+    color: var(--dark-white);
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122.8%;
+    /* 19.648px */
+    text-transform: lowercase;
+}
+
+/* секция для обратной связи */
+
+#callback {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 612px;
+    /* height: 946px; */
+    height: 100%;
+    background-color: var(--my-backgroud);
+    padding: 40px 50px;
+
+    transition: .5s ease-in-out;
+}
+
+/* #callback * {
+    color: white
+} */
+
+#callback h1 {
+    font-family: Raleway;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 148.8%;
+    /* 74.4px */
+}
+
+.cancel_btn_block {
+    display: block;
+    text-align: end;
+}
+
+.callback_block {
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 40px;
+}
+
+/* поля ввода */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.inp {
+    width: 100%;
+    height: 40px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+
+    color: rgba(255, 255, 255, .8);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122.8%;
+}
+
+.inp:focus {
+    border: none;
+}
+
+.inp:checked {
+    border: none;
+}
+
+
+/* кнопка согласия */
+.agreement {
+    display: flex;
+    width: 80%;
+    gap: 20px;
+    align-items: center;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 128.8%;
+    /* 20.608px */
+    letter-spacing: 0.56px;
+}
+
+input[type="checkbox"] {
+    width: 40px;
+    height: 40px;
+    visibility: hidden;
+    background-color: antiquewhite;
+}
+
+.checkmark {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: var(--my-backgroud);
+    border: 1px white solid;
+}
+
+/* checkbox custom */
+
+/* On mouse-over, add a grey background color */
+.agreement:hover input~.checkmark {
+    background-color: var(--my-hover-backgroud);
+}
+
+/* When the checkbox is checked, add a blue background */
+.agreement input:checked~.checkmark {
+    background-image: url("./media/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+}
+
+.cancel_btn_block:hover>img {
+    border: 1px solid white;
+}
+
+#callback_done {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 612px;
+    height: 100%;
+    background-color: var(--my-backgroud);
+    /* padding: 190px 190px; */
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    transition: .5s ease-in-out;
+}
+
+#callback_done>.one_h {
+    margin: 70px 190px;
+    font-family: Raleway;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 157.8%;
+    /* 78.9px */
+}
+
+#callback_done>.two_h {
+    margin: 70px 190px;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 145%;
+    
+}
+
+#callback_done > .logo{
+    width: 220px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60%;
+    margin-bottom: 10px;
+
+}
